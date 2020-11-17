@@ -1,0 +1,23 @@
+{
+  "name": "projeto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonatas401/E-commerce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonatas401/E-commerce/issues"
+  },
+  "homepage": "https://github.com/jonatas401/E-commerce#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "marko": "^5.0.0-next.54"
+  }
+}
