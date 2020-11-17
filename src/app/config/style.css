@@ -1,0 +1,200 @@
+*{
+    margin:0;
+    padding:0;
+}
+ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(204, 201, 201);
+    background:  url() repeat-x;
+  
+}
+
+/**** cabeçalho****/
+
+.navbarr{
+    background: url(./assets/commerce.png) no-repeat right top;
+    background-position: 30px -70px;
+    height:250px;
+    width: 1300px;
+    padding:10px;
+   
+    
+
+}
+.logo{
+    width:50;
+    height:70;
+    background: url(../assets/logo.png) no-repeat center;
+    text-indent:-3000px;
+    padding:25px;
+    margin-right:350px;
+   
+    
+}
+
+.navbarr ul{
+    float:left;
+    background-color: rgb(37, 168, 129);
+    margin-top:-70px;
+    margin-left:500px;
+    
+ 
+}
+.navbarr ul li{
+    list-style-type: none;
+    float:left;
+      
+}
+a{ 
+    text-decoration:none;
+
+}
+.navbarr ul a{
+    font-size: 0.9em;
+    padding: 0.5em 1.5em;
+    display:block;
+    text-decoration:none;
+    color:#fff;
+    line-height: 2.1em;
+    background: url(./assets/divisor.png) no-repeat;
+    background-position:1px 2px
+
+}
+
+#navegacao li a:hover{
+    background-color:black;
+    color:blue;
+}
+/*****cabeçalho*****/
+
+/****corpo*****/
+
+
+#principal{
+    width:1100px;
+    margin:10px auto;
+    min-width: 500px;
+
+}
+
+
+
+.ultima-en1{
+    width:50%;
+    float:left;
+    margin-left:30px;
+    background-color: rgb(7, 6, 6);
+    margin-top: 20px;
+    height:350px;
+    margin-bottom:40px;
+    
+    
+}
+.ultima-en2{
+    width:50%;
+    float:left;
+    margin-left:30px;
+    background-color: rgb(2, 2, 2);
+    margin-top: 20px;
+    height:400px;
+    
+    
+}
+.Destaques{
+    float:right;
+    width:30%;
+    margin-right:100px;
+    margin-top:20px;
+    height:350px;
+
+}
+.news{
+   width:20%;
+   clear:both;
+   float:left;
+   height:100px;
+   margin-top:10px;
+   margin-right:30px;
+   margin-left:30px;
+}
+.mundo{
+    width:27%;
+    float:left; 
+    margin-top:5px; 
+
+    
+}
+.mundo li:hover{
+    background-color:gray;
+}
+                                                    
+.mundo li{
+    border-bottom:1px solid gray;
+    background-color:rgb(117, 201, 173);
+}
+
+.recentes{
+    width:30%;
+    margin-right:100px;
+    float: right;
+    margin-top: 5px;
+    margin-bottom: 30px;
+   
+    
+}
+.recentes li{
+    border-bottom:1px solid gray;
+
+    background-color:rgb(117, 201, 173);
+}
+.leia {
+
+    color: rgb(156, 28, 28);
+    padding:10px;
+    line-height: 40px;
+}
+
+#rodape{
+    clear:both;
+    text-align:center;
+    background-color: brown;
+    margin-top:20px;
+}
+.fundo{
+    
+    background:#fff url(../assets/fundo-caixa.png);
+
+}
+.foto{
+    width:250px;
+}
+.fotob{
+    width:400px;
+}
+.foto2{
+    width:100px;
+    float:left;
+    padding:5px;
+}
+h1{
+    background:rgb(53, 93, 202);
+    color:#fff;
+    margin:10px;
+
+    
+}
+h2{
+    background:rgb(53, 93, 202);
+    color:#fff;
+    margin:10px;
+    
+}
+
+
+
+
