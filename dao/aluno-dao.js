@@ -5,7 +5,7 @@ class AlunoDao {
         this._connection = mysql.createConnection({
             host: 'localhost',
             user: 'root',
-            password: 'senha',
+            password: '85322487-+Jj',
             database: 'ecommerce' 
         })
     }
@@ -151,6 +151,7 @@ class AlunoDao {
             )
         })
     }
+    
 }
 
 module.exports = AlunoDao

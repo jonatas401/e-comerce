@@ -2,12 +2,12 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-    <title>UseVibe - Início</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">  
+    <title>UseVibe - Cadastro</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.2.4/css/simple-line-icons.min.css'>
-    <link rel="stylesheet" href="styles/style.css">
+    
+     <link rel="stylesheet" href="styles/style.css">
+    
      <style>
         body {
             color: #fff;
@@ -73,12 +73,12 @@
             <label  for="endereco" class="">Endereço: </label> 
             <div class="from-group">
                 <label for="cep">CEP</label>
-                <input name="cep" class="form-control cad1" type="text" id="cep" maxlength="9" required>
+                <input name="cep" class="form-control cad1" type="text" id="cep" maxlength="9" onblur="pesquisaCep(this.value)" required>
                 <small>00000-000</small>
             </div>
             <div class="from-group">
                 <label for="logradoro">Logradouro</label>
-                <input name="logradouro" class="form-control cad1" type="text" id="Logradouro" >
+                <input name="logradouro" class="form-control cad1" type="text" id="Logradouro"  value=''>
                 <small></small>
             </div>
             <div class="from-group">
@@ -91,14 +91,14 @@
                 <input name="localidade" class="form-control cad1" type="text" id="Localidade">
                 
             </div>
-            <div class="from-group">
+            <div class="from-group" style="margin-bottom:10px;">
                 <label for="uf">UF</label>
-                <select style="margin-top:20px; margin-bottom: 5px;" class="" name="uf" required>
-                    <option value='${data.nome}'></option>
-                </select>
-               <!--<input class="form-control" type="text" id="uf">--> 
-                <small>estado</small>
+                <input name="uf" class="form-control cad1" style="width:10%; margin-left:45%;" type="text" id="uf" >
+                <small >estado</small>
             </div>
+               <!--<input class="form-control" type="text" id="uf">--> 
+                
+         
 
 
             <button type="submit" class="btn btn-light">Inserir</button>
@@ -128,7 +128,7 @@
 
           <for|message, index| of=data.error_messages>
                 <script> 
-                
+                console.log('email em uso')
                 $(document).ready(function(){
                     $('.toast').toast('show',)
                 })
@@ -149,26 +149,34 @@
 
 
         <script>
-           /* const cep = document.querySelector("#cep");
 
-            cep.addEventListener('blur',(e)=>{
-                console.log(e)
-                let search = cep.value.replace('-', '');
-                const options ={
-                    method: 'GET',
-                    mode:'cors',
-                    cache:'default'
-                }
-            
-                fetch(`viacep.com.br/ws/${search}/json/`, options)
-                .then( res=>{  return res.json().then( data =>{ console.log(data)})
+            function pesquisaCep(cep){
+                console.log(cep)
+                let ajax = new XMLHttpRequest();
+
+                ajax.open('GET', 'https://viacep.com.br/ws/'+cep+'/json/')
+
+                //console.log(ajax)
+                ajax.onreadystatechange = ()=>{
+                    //console.log(ajax.readyState)
                     
-                })
-                .catch(e => console.log('algo errado' , e))
-            })
-*/
+                    if(ajax.readyState == 4 && ajax.status == 200){
+                    let res = ajax.responseText
+                    let ajaxOBJ = JSON.parse(res);
 
-            function estados(){
+                    console.log(ajaxOBJ)
+
+                    document.getElementById('Logradouro').value = ajaxOBJ.logradouro;
+                    document.getElementById('Bairro').value = ajaxOBJ.bairro;
+                    document.getElementById('Localidade').value = ajaxOBJ.localidade;
+                    document.getElementById('uf').value = ajaxOBJ.uf;
+                    }
+                }
+
+                ajax.send()
+            }
+
+            /*function estados(){
 
                 const ufSelect = document.querySelector('select[name=uf]')
 
@@ -184,7 +192,7 @@
 
                 }
              
-            estados() 
+            estados() */
               
     
 </script>

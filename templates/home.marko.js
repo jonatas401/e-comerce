@@ -2,7 +2,7 @@
 "use strict";
 
 var marko_template = module.exports = require("marko/src/html").t(__filename),
-    marko_componentType = "/e-commerce$0.0.1/templates/home.marko",
+    marko_componentType = "/e-comerce$0.0.1/templates/home.marko",
     marko_renderer = require("marko/src/runtime/components/renderer"),
     marko_attr = require("marko/src/runtime/html/helpers/attr"),
     helpers_escape_xml = require("marko/src/runtime/html/helpers/escape-xml"),
@@ -74,7 +74,7 @@ marko_template._ = marko_renderer(render, {
   });
 
 marko_template.meta = {
-    id: "/e-commerce$0.0.1/templates/home.marko",
+    id: "/e-comerce$0.0.1/templates/home.marko",
     tags: [
       "marko/src/core-tags/components/init-components-tag",
       "marko/src/core-tags/core/await/reorderer-renderer",

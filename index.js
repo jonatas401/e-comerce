@@ -90,7 +90,7 @@ app.post('/into' , (req,res)=>{
 
 app.get('/cadastro', (req,res) => {
     let response = {
-        error_messages: req.flash('error'),
+        error_messages: req.flash(error) + req.flash('error'),
         success_messages: req.flash('success'),
         results:[]
     };
@@ -103,7 +103,7 @@ app.post('/save' , (req,res)=>{
     console.log(req.body);
     dao.checkout(req.body).then((results)=>{
         console.log(results[0]);
-    if(!results[0] ||req.body.email != results[0].email){
+    if(!results[0] || req.body.email != results[0].email){
 
         dao.save(req.body).then((results)=>{
             req.flash('success', 'cadastro feito com sucesso');
@@ -111,10 +111,11 @@ app.post('/save' , (req,res)=>{
         }).catch(err =>{
              console.log(err);
              req.flash('error', "houve um erro por favor tente novamente")
-             res.redirect('/')
+             res.redirect('/cadastro')
              })
         
     }else{
+            error.push('esse email já existe tente outro')
              req.flash('error', "esse email já existe")
              res.redirect('/cadastro');
     }
@@ -144,8 +145,8 @@ app.post('/comprar', (req,res)=>{
                 "payment_method": "paypal"
             },
             "redirect_urls": {
-                "return_url": "http://localhost:3000/success",
-                "cancel_url": "http://localhost:3000/cancel"
+                "return_url": "http://localhost:3001/success",
+                "cancel_url": "http://localhost:3001/cancel"
             },
             "transactions": [{
                 "item_list": {
